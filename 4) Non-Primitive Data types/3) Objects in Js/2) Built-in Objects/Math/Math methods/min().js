@@ -1,0 +1,1 @@
+console.log(Math.min(10,20,30,40)) //? returns minimum value. returns NaN if has a string
