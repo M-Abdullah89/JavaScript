@@ -19,5 +19,6 @@ subtract.addEventListener("click", () => {
 });
 
 reset.addEventListener("click", () => {
+  i = 0;
   result.textContent = "";
 });
