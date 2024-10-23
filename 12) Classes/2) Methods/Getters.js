@@ -14,4 +14,3 @@ const person = new Person('John', 'Doe');
 console.log(person.fullName); // John Doe
 
 //! In this example, fullName is a getter. When you access person.fullName, it calls the fullName method and returns the computed full name.
-//! Setters allow you to define a method that acts like a property. When you assign a value
