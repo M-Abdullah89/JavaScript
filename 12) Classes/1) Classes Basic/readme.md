@@ -1,3 +1,4 @@
+<!-- Install live preview extension and click on show preview  -->
 # *What are Classes?*
 ### Classes in JavaScript are a blueprint for creating objects with shared properties and methods. They are syntactical sugar over JavaScript's existing prototype-based inheritance. They make defining and creating objects easier and more straightforward.
 
