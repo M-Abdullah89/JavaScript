@@ -24,6 +24,5 @@ class Person {
 const Abdullah = new Person("Abdullah", 15, "JS");
 Abdullah.greet(); //* Output: Hello, my name is Abdullah and I am 15 years old.
 Abdullah.present(); //* Output: I am learning JS
-
 console.log("name property of instance Abdullah of class Person is: ",Abdullah.name); // Abdullah
 console.log("age property of instance Abdullah of class Person is ",Abdullah.age); // 15
