@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MutationObserver Example with takeRecords</title>
+</head>
+<body>
+    <div id="someElement">This is the target text.</div>
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="getRecords()">Get Records</button>
+
+    <script>
+        // Select the target node
+        const targetNode = document.getElementById('someElement').firstChild;
+
+        // Options for the observer (which mutations to observe)
+        const config = { characterData: true, characterDataOldValue: true };
+
+        // Callback function to execute when mutations are observed
+        const callback = function(mutationsList, observer) {
+            for (let mutation of mutationsList) {
+                if (mutation.type === 'characterData') {
+                    console.log(`The text content was modified.`);
+                    console.log(`Old value: ${mutation.oldValue}`);
+                }
+            }
+        };
+
+        // Create an observer instance linked to the callback function
+        const observer = new MutationObserver(callback);
+
+        // Start observing the target node for configured mutations
+        observer.observe(targetNode, config);
+
+        // Function to change the text content
+        function changeText() {
+            targetNode.nodeValue = 'The text has been changed.';
+        }
+
+        // Function to get and process pending mutation records
+        function getRecords() {
+            const records = observer.takeRecords();
+            for (let mutation of records) {
+                if (mutation.type === 'characterData') {
+                    console.log(`The text content was modified.`);
+                    console.log(`Old value: ${mutation.oldValue}`);
+                }
+            }
+        }
+
+        // To stop observing
+        // observer.disconnect();
+    </script>
+</body>
+</html>

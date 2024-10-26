@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MutationObserver Example with attributeFilter</title>
+  </head>
+  <body>
+    <div id="someElement" class="example" title="Initial Title">
+      This is the target element.
+    </div>
+    <button onclick="changeTitle()">Change Title</button>
+
+    <script>
+      // Select the target node
+      const targetNode = document.getElementById("someElement");
+
+      // Options for the observer (which mutations to observe)
+      const config = { attributes: true, attributeFilter: ["title"] };
+
+      // Callback function to execute when mutations are observed
+      const callback = function (mutationsList, observer) {
+        for (let mutation of mutationsList) {
+          if (mutation.type === "attributes") {
+            console.log(
+              `The ${mutation.attributeName} attribute was modified.`
+            );
+          }
+        }
+      };
+
+      // Create an observer instance linked to the callback function
+      const observer = new MutationObserver(callback);
+
+      // Start observing the target node for configured mutations
+      observer.observe(targetNode, config);
+
+      // Function to change the title attribute
+      function changeTitle() {
+        targetNode.title = "New Title";
+      }
+
+      // To stop observing
+      // observer.disconnect();
+    </script>
+  </body>
+</html>

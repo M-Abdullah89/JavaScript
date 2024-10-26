@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MutationObserver Example with Disconnect</title>
+</head>
+<body>
+    <div id="someElement">This is the target text.</div>
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="stopObserving()">Stop Observing</button>
+
+    <!--! This method stops the observer from monitoring mutations -->
+    <script>
+        // Select the target node
+        const targetNode = document.getElementById('someElement').firstChild;
+
+        // Options for the observer (which mutations to observe)
+        const config = { characterData: true };
+
+        // Callback function to execute when mutations are observed
+        const callback = function(mutationsList, observer) {
+            for(let mutation of mutationsList) {
+                if (mutation.type === 'characterData') {
+                    console.log(`The text content was modified.`);
+                }
+            }
+        };
+
+        // Create an observer instance linked to the callback function
+        const observer = new MutationObserver(callback);
+
+        // Start observing the target node for configured mutations
+        observer.observe(targetNode, config);
+
+        // Function to change the text content
+        function changeText() {
+            targetNode.nodeValue = 'The text has been changed.';
+        }
+
+        // Function to stop the observer
+        function stopObserving() {
+            observer.disconnect();
+            console.log('Stopped observing.');
+        }
+
+        // To stop observing automatically after the first change
+        observer.observe(targetNode, config);
+    </script>
+</body>
+</html>

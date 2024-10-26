@@ -1,0 +1,53 @@
+<!--! it is the same as subtree . It monitors addition/removal of child nodes -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MutationObserver Example</title>
+</head>
+<body>
+    <div id="some-id">
+        <p>Initial content</p>
+    </div>
+    <button id="add">Add Child</button>
+    <button id="remove">Remove Child</button>
+
+    <script>
+        // Select the node that will be observed for mutations
+        const targetNode = document.getElementById('some-id');
+
+        // Options for the observer (which mutations to observe)
+        const config = { childList: true };
+
+        // Callback function to execute when mutations are observed
+        const callback = function(mutationsList, observer) {
+            for(const mutation of mutationsList) {
+                if (mutation.type === 'childList') {
+                    console.log('A change in the child node list was observed.');
+                }
+            }
+        };
+
+        // Create an instance of MutationObserver with the callback function
+        const observer = new MutationObserver(callback);
+
+        // Start observing the target node for configured mutations
+        observer.observe(targetNode, config);
+
+        // Adding and removing child elements with specific log messages
+        document.getElementById('add').addEventListener('click', () => {
+            const newElement = document.createElement('p');
+            newElement.textContent = 'New child element';
+            targetNode.appendChild(newElement);
+            console.log('A child node has been added.');
+        });
+
+        document.getElementById('remove').addEventListener('click', () => {
+            if (targetNode.lastChild) {
+                targetNode.removeChild(targetNode.lastChild);
+                console.log('A child node has been removed.');
+            }
+        });
+    </script>
+</body>
+</html>
