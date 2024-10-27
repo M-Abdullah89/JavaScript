@@ -9,4 +9,9 @@ function addTwoNumbers(x,y) {
     console.log(x + y); 
   } 
   let arr2 = [10,15,20];
-  addTwoNumbers(...arr2);
+  addTwoNumbers(...arr2); // 25
+
+  let arr3 = [10, 15, 20];
+let sum = arr3.reduce((num1 , num2) => { return  num1 + num2; });
+
+console.log(sum);  //45
