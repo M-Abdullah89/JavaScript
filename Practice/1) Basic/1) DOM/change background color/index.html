@@ -22,10 +22,8 @@
         // Function to handle the keydown event
         function handleKeyPress(event) {
             // Check if the pressed key is "W" or "w"
-            if (event.key === 'w' || event.key === 'W') {
-                // Change the background color to a random color
+       // Change the background color to a random color
                 document.body.style.backgroundColor = getRandomColor();
-            }
         }
 
         // Function to generate a random color
@@ -39,7 +37,7 @@
         }
 
         // Add an event listener for keydown events
-        window.addEventListener('keydown', handleKeyPress);
+        window.addEventListener('click', handleKeyPress);
     </script>
     </body>
 </html>
