@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Simple Cartoon Character</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="character">
-            <div class="face">
-                <div class="eyes">
-                    <div class="eye left-eye"></div>
-                    <div class="eye right-eye"></div>
-                </div>
-                <div class="smile"></div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Cartoon Character</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="character">
+        <div class="face">
+            <div class="eyes">
+                <div class="eye left-eye"></div>
+                <div class="eye right-eye"></div>
             </div>
-            <div class="body"></div>
+            <div class="smile"></div>
         </div>
-        <script>
-document.addEventListener('keydown', function(event) {
-    const character = document.querySelector('.character');
-    if (event.key.toLowerCase() === 'w') {
-        if (!character.classList.contains('jumping')) {
-            character.classList.add('jumping');
-            setTimeout(() => {
-                character.classList.remove('jumping');
-            }, 500); // This should match the animation duration (0.5s = 500ms)
-        }
-    }
-});
+        <div class="body"></div>
+    </div>
+    <div class="hurdle"></div>
+    <div class="land"></div>
+    <script src="script.js">
     </script>
-    </body>
+</body>
+
 </html>
