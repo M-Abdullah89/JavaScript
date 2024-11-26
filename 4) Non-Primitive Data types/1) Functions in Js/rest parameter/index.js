@@ -2,6 +2,11 @@
 
 //* Syntax: function(...args) { }
 
+function show(...numbers) {
+    return numbers;
+}
+console.log(show(1, 2, 3, 4)); //*[ 1, 2, 3, 4 ]
+
 function sumAll(...numbers) {
     return numbers.reduce((sum, number) => sum + number);
 }
