@@ -3,11 +3,11 @@
 
 
 try {
-    console.log('This is something',a); //! it will show an error bcz a is not defined 
+ console.log('This is something',a); //! it will show an error bcz a is not defined 
 } catch (error) {//! on error
     console.error("Error occured"); 
 }
-    // console.log('This is something',a);  //? a is not defined error
+// console.log('This is something',a);  //? a is not defined error
 
 
 /* 
