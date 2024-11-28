@@ -7,11 +7,13 @@ const timer = document.querySelector(".timer");
 let startcounter;
 let counter = 0;
 start.addEventListener("click", () => {
+  clearInterval(startcounter); // Clear any existing interval
   startcounter = setInterval(() => {
     counter++;
     timer.textContent = counter;
   }, 1000);
 });
+
 stop.addEventListener("click", () => {
   clearInterval(startcounter);
 });
