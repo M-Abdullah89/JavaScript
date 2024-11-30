@@ -37,3 +37,26 @@ Second call: count = 2 (returns 2)
 Third call: count = 3 (returns 3)
 
 */
+
+
+      function counter() {
+         let cnt = 100; // Works as a global variable for the decrement function.
+         return function decrement() {
+            cnt = cnt - 1;
+            console.log(cnt,"\n");
+         }
+      }
+      const func = counter(); // Returns the decrement() function expression
+      func();
+      func();
+      func();
+
+
+//! Why doesn't cnt reset?:
+
+//? The variable cnt is part of the scope of the first call to counter. As long as the returned function (func) is in use, the scope created by that initial call to counter is preserved.
+// ?A new cnt would only be initialized if counter were called again to create a new closure.
+
+//! Key Point
+//?  counter is only executed once in your code (when you call counter() and assign the result to func). The cnt variable inside counter persists because of the closure created when the decrement function was returned.
+
