@@ -33,7 +33,7 @@ function init() {
     }
     function child2() {
         console.log("child2",name);
-     //   console.log(abc);//* abc cannot be accesed . sibling function & parent function cannot access variables declared in child functions 
+     //console.log(abc);//* abc cannot be accesed . sibling function & parent function cannot access variables declared in child functions 
     }
     child1();
     child2();
