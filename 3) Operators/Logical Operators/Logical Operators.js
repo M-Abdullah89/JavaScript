@@ -50,3 +50,12 @@ console.log(5||7);
 //! Why 5 Is Returned:
 //? The left-hand operand (5) is truthy, so the evaluation stops immediately without checking the right-hand operand (7).
 //? The result is the first truthy value encountered, which is 5.
+
+
+//! Real World use case 
+let name = null;
+let displayName = name || "Guest";
+console.log(displayName);  // Output: Guest
+
+let isLoggedIn = true;
+isLoggedIn && console.log("Welcome!");  // Output: Welcome!
