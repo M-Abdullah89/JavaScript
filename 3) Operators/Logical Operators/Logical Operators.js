@@ -59,3 +59,5 @@ console.log(displayName);  // Output: Guest
 
 let isLoggedIn = true;
 isLoggedIn && console.log("Welcome!");  // Output: Welcome!
+
+console.log((true||false)&&true);
