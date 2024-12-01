@@ -34,7 +34,6 @@ const object = {
 
 
 
-
 //! Important 
 //? Objects created with initializers are called plain objects
 const newObj = object.create()
