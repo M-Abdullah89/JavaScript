@@ -5,8 +5,7 @@ const container = document.querySelector('.container'),
     num = document.querySelector('.num'),
     Score = document.querySelector('.Score'),
     form = document.querySelector('form'),
-    body = document.querySelector('body'),
-    html = document.querySelector('html');;
+    X = document.querySelector('.X');;
 
 let random_number = Math.floor(Math.random() * 101);
 console.log(random_number);
@@ -21,29 +20,35 @@ form.addEventListener('submit', function (event) {
         res.innerText = "Enter a valid number";
         res.style.color = "red";
         guess++;
-    } 
-     else if (value < random_number) {
+    }
+    else if (value < random_number) {
         res.innerText = `The number is too low. Try a higher number.`;
         res.style.color = "blue";
         guess++;
-    } 
-     else if (value > random_number) {
+    }
+    else if (value > random_number) {
         res.innerText = `The number is too high. Try a lower number.`;
         res.style.color = "red";
         guess++;
-    } 
-     else if (value == random_number) {
-        box.classList.remove("box");
-        box.classList.add("onwin");
-        num.innerText = `The number is ${random_number}`
+    }
+    else if (value == random_number) {
+        box.classList.toggle("box");
+        box.classList.toggle("onwin");
+        num.innerText = `The number is ${random_number}`;
         score = 100 - guess;
-        Score.innerText = `Score: ${score}`
-        body.addEventListener("click",()=>{
-            box.classList.remove("onwin")
-            box.classList.add("box")
-        })
-        html.addEventListener("click",()=>{
-            box.classList.remove("onwin")
-            box.classList.add("box")
-        })
-    }});
+        Score.innerText = `Score: ${score}`;
+        setTimeout(() => {
+              input.value = '';
+              location.reload();
+    }, 3000);
+    X.addEventListener("click", () => {
+        box.classList.toggle("onwin")
+        box.classList.toggle("box")
+    })
+
+    }
+
+    setTimeout(() => {
+        input.value = '';
+    }, 100);
+});
