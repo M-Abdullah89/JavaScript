@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="myFunction()">Insert</button>
+<p>Click "insert" to insert some text after the header:</p>
+
+<h2 id="myH2">My Header</h2>
+<script>
+function myFunction() {
+ const h2 = document.getElementById("myH2");
+  let text = "My inserted text";
+  h2.insertAdjacentText("afterend", text);
+}
+
+// same as before it inserts text in specified posiotion relative to a node 
+//* h2.insertAdjacentElement("position", element)
+</script>
+</body>
+</html>
