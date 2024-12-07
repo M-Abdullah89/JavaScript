@@ -1,0 +1,1 @@
+### "The screen object contains information about the visitor's screen."
