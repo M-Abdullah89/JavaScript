@@ -1,3 +1,3 @@
 function func() {
-    location.assign("https://todoappbyabdullah.netlify.app/")
+    location.assign("https://www.example.com/")
 }

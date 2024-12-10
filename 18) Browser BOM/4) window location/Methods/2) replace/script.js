@@ -1,3 +1,3 @@
 function func() {
-    location.replace("https://todoappbyabdullah.netlify.app/")
+    location.replace("https://www.example.com/")
 }
