@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Events</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <button id="fullscreenBtn">Toggle Fullscreen</button>
+    <div id="message"></div>
+    <script>
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const messageDiv = document.getElementById('message');
+        fullscreenBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    messageDiv.textContent = `Error attempting to enable fullscreen: ${err.message}`;
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        });
+        document.addEventListener('fullscreenchange', () => {
+            if (document.fullscreenElement) {
+                messageDiv.textContent = 'Entered fullscreen mode.';
+            } else {
+                messageDiv.textContent = 'Exited fullscreen mode.';
+            }
+        });
+        document.addEventListener('fullscreenerror', (event) => {
+            messageDiv.textContent = `Fullscreen error: ${event}`;
+        });
+    </script>
+</body>
+</html>

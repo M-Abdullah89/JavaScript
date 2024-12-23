@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Event Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Change Event Example</h1>
+    <p>
+        The onchange event occurs when the value of an HTML element is changed.
+
+Tip: This event is similar to the oninput event. The difference is that the oninput event occurs immediately after the value of an element has changed, while onchange occurs when the element loses focus, after the content has been changed. The other difference is that the onchange event also works on &lt;select&gt; ... &lt;/select&gt; elements.
+
+    </p>
+    <form>
+        <label for="textInput">Enter some text:</label>
+        <input type="text" id="textInput" placeholder="Type something...">
+        
+        <label for="selectInput">Choose an option:</label>
+        <select id="selectInput">
+            <option value="">Select an option</option>
+            <option value="Option 1">Option 1</option>
+            <option value="Option 2">Option 2</option>
+            <option value="Option 3">Option 3</option>
+        </select>
+    </form>
+    <p id="output"></p>
+    <script src="index.js"></script>
+</body>
+</html>
