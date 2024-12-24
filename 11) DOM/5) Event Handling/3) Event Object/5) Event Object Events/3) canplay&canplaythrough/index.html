@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Event Handling</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        video {
+            width: 80%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        #message {
+            font-size: 1.2em;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video Event Handling</h1>
+    <video id="myVideo" controls>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div id="message"></div>
+
+    <script>
+        const video = document.getElementById('myVideo');
+        const messageDiv = document.getElementById('message');
+
+        video.addEventListener('canplay', () => {
+            messageDiv.innerText = 'Video can start playing!';
+        });
+
+        video.addEventListener('canplaythrough', () => {
+            messageDiv.innerText = 'Video can play through without stopping!';
+        });
+    </script>
+</body>
+</html>
