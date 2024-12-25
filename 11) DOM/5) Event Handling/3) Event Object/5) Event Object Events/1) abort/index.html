@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,4 +54,61 @@ setTimeout(() => {
         });
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abort Form Submission Example</title>
+    <style>
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+margin: 50px;
+        }
+input , button {
+padding: 10px 20px;
+margin: 10px;
+font-size: 16px;
+cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Abort Form Submission Example</h1>
+    <form id="myForm">
+        <input type="text" placeholder="Enter some text" required>
+        <button type="submit">Submit</button>
+    </form>
+    <button id="abortSubmit" disabled>Abort Submission</button>
+
+    <script>
+        const form = document.getElementById('myForm');
+        const abortSubmitButton = document.getElementById('abortSubmit');
+        let isAborted = false;
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+abortSubmitButton.disabled = false;
+setTimeout(() => {
+    if (isAborted) {
+        console.log('Form submission aborted.');
+        isAborted = false; // Reset abort status
+    } 
+    else {
+        location.reload()
+        console.log('Form submitted successfully.');
+ }
+}, 2000);
+
+        });
+
+        abortSubmitButton.addEventListener('click', () => {
+            isAborted = true; // Set abort status to true
+            console.log('Abort button clicked. Form submission will be aborted.');
+        });
+    </script>
+</body>
+>>>>>>> 34c2e3d08504ed4d4b043a8346ea4595e30ed9c4
 </html>
