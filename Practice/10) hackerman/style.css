@@ -1,0 +1,9 @@
+body{
+
+    height: 100vh;
+    background-color: #000000;
+    font-family: Consolas, monospace;
+    color: #00FF00;
+    text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 15px #00FF00;
+    font-size: 1.5em;
+}
