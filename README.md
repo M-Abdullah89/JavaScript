@@ -27,7 +27,6 @@ Each file includes:
 - **Better Comments (VSCode Extension)**
 - **Node.js** (optional for some examples)
 
----
 
 ---
 
